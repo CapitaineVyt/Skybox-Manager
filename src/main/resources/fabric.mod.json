@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "skybox-manager",
+  "version": "${version}",
+  "name": "Skybox Manager",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/skybox-manager/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "org.kapi.skyboxManager.client.SkyboxManagerClient"
+    ],
+    "main": [
+      "org.kapi.skyboxManager.SkyboxManager"
+    ]
+  },
+  "mixins": [
+    "skybox-manager.mixins.json",
+    {
+      "config": "skybox-manager.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

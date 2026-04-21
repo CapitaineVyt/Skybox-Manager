@@ -1,0 +1,56 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Ignored default folder with query files
+/queries/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# gradle
+
+.gradle/
+build/
+run/
+.idea/
+out/
+*.local
+# eclipse
+
+*.launch
+
+# idea
+
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# macos
+
+*.DS_Store
+
+# fabric
+
+
+# java
+
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+
+.kotlin/
+/.kotlin
+*.salive
+/logs
+
