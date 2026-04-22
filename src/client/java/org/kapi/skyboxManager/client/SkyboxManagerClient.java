@@ -6,6 +6,8 @@ import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.world.MutableWorldProperties;
 import org.lwjgl.glfw.GLFW;
 
 public class SkyboxManagerClient implements ClientModInitializer {
@@ -21,6 +23,7 @@ public class SkyboxManagerClient implements ClientModInitializer {
         ));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
+            // Ouvrir le menu
             while (keyBinding.wasPressed()) {
                 SkyboxManager.scanSkyboxFolders();
                 client.setScreen(new SkyboxSelectorScreen());

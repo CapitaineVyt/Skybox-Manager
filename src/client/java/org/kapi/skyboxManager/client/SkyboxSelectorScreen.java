@@ -13,11 +13,39 @@ public class SkyboxSelectorScreen extends Screen {
 
     @Override
     protected void applyBlur(DrawContext context) {
-        // Pas de flou
     }
 
     @Override
     protected void init() {
+        // Bouton Jour
+        ButtonWidget[] jourBtn = new ButtonWidget[1];
+        ButtonWidget[] nuitBtn = new ButtonWidget[1];
+
+        jourBtn[0] = ButtonWidget.builder(Text.literal("☀ Day"), button -> {
+            SkyboxManager.lockTime = true;
+            SkyboxManager.lockedTime = 6000L;
+            jourBtn[0].active = false;
+            nuitBtn[0].active = true;
+        }).dimensions(this.width / 2 - 102, 450, 100, 20).build();
+
+        nuitBtn[0] = ButtonWidget.builder(Text.literal("🌙 Night"), button -> {
+            SkyboxManager.lockTime = true;
+            SkyboxManager.lockedTime = 18000L;
+            nuitBtn[0].active = false;
+            jourBtn[0].active = true;
+        }).dimensions(this.width / 2 + 2, 450, 100, 20).build();
+
+        // État initial
+        if (SkyboxManager.lockTime && SkyboxManager.lockedTime == 6000L) {
+            jourBtn[0].active = false;
+        } else if (SkyboxManager.lockTime && SkyboxManager.lockedTime == 18000L) {
+            nuitBtn[0].active = false;
+        }
+
+        this.addDrawableChild(jourBtn[0]);
+        this.addDrawableChild(nuitBtn[0]);
+
+        // Boutons skybox
         for (int i = 0; i < SkyboxManager.skyboxFolders.size(); i++) {
             String name = SkyboxManager.skyboxFolders.get(i);
             int y = 40 + i * 25;

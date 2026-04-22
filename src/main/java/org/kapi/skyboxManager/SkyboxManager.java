@@ -11,6 +11,8 @@ public class SkyboxManager implements ModInitializer {
     public static final String MOD_ID = "skybox-manager";
     public static Path configDir;
     public static List<String> skyboxFolders = new ArrayList<>();
+    public static boolean lockTime = false;
+    public static long lockedTime = 6000L; // midi par défaut
 
     @Override
     public void onInitialize() {
@@ -35,6 +37,4 @@ public class SkyboxManager implements ModInitializer {
             }
         }
     }
-
-
 }

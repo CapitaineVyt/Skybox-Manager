@@ -4,6 +4,7 @@
   "package": "org.kapi.skyboxManager.client.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
+    "ClientWorldMixin",
     "WorldRendererMixin"
   ],
   "injectors": {
