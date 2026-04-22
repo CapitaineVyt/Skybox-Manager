@@ -1,2 +1,0 @@
-/time set night
-/time set 15000
